@@ -1,6 +1,5 @@
 <template>
   <div>
-   comingsoon
     <ul>
       <li v-for="data in $store.state.comingList" :key="data.filmId" @click="handleClick(data.isPresale,data.filmId)">
         <img :src="data.poster" />
@@ -45,13 +44,35 @@ export default {
 </script>
 <style lang="scss" scoped>
 ul {
+  margin-bottom: 50px;
   li {
+     z-index:-1;
     padding: 10px;
     overflow: hidden;
+     margin-left: 10px;
+  flex: 1;
+  position: relative;
     img {
       float: left;
       height:100px;
     }
   }
+  h3 {
+  font-size: 17px;
+  line-height: 24px;
+  width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+p {
+  font-size: 13px;
+  color: #666;
+  line-height: 22px;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+}
+
 </style>

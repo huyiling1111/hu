@@ -17,8 +17,9 @@ export default {
   },
   mounted () {
     this.mystyle.height = document.documentElement.clientHeight - 60 + 'px'
+    var id = localStorage.getItem('name')
     axios({
-      url: 'https://m.maizuo.com/gateway?cityId=310100&ticketFlag=1&k=9126204',
+      url: `https://m.maizuo.com/gateway?cityId=${id}&ticketFlag=1&k=91262041`,
       headers: {
         'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.0.4","e":"1598099661919458008793092","bc":"310100"}',
         'X-Host': ' mall.film-ticket.cinema.list'

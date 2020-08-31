@@ -2,11 +2,11 @@
   <div>
     <ul>
       <router-link to="/film" tag="li" activeClass="myactive">
-      <i class="iconfont icon-dianying"></i>film</router-link>
-      <router-link to="/cinema" tag="li" activeClass="myactive">
-      <i class="iconfont icon-dianying1"></i>cinema</router-link>
+      <i class="iconfont icon-dianying"></i>电影</router-link>
+      <router-link to="/city" tag="li" activeClass="myactive">
+      <i class="iconfont icon-dianying1"></i>电影院</router-link>
       <router-link to="/center" tag="li" activeClass="myactive">
-      <i class="iconfont icon-wode"></i>center</router-link>
+      <i class="iconfont icon-wode"></i>我的</router-link>
     </ul>
   </div>
 </template>
@@ -21,7 +21,9 @@ ul {
   width: 100%;
   position: fixed;
   bottom: 0px;
-  i{margin-right:3px;}
+  font-size: 14px;
+  i{line-height:20px；
+ }
   li {
     flex: 1;
     line-height: 50px;

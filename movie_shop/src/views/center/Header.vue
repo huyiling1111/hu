@@ -1,18 +1,13 @@
 <template>
-    <div id="main">
-      <Header title="我的喵喵" >  </Header >
-        <Login> </Login>
-    </div>
+  <header id="header">
+    <slot></slot>
+    <h1>{{ title }}</h1>
+  </header>
 </template>
 
 <script>
-import Header from '@/views/center/Header'
-import Login from '@/views/center/Login'
 export default {
-  components: {
-    Header,
-    Login
-  },
+  name: 'Header',
   props: {
     title: {
       type: String,
@@ -27,8 +22,8 @@ export default {
   width: 100%;
   height: 50px;
   color: #fff;
-  background: #e97508;
-  border-bottom: 1px solid #e97508;
+  background: #e54847;
+  border-bottom: 1px solid #e54847;
   position: relative;
 }
 #header h1 {

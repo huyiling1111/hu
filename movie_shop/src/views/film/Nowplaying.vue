@@ -1,17 +1,13 @@
 <template>
   <div>
-    nowplaying
-    <ul
-     v-infinite-scroll="loadMore"
-     infinite-scroll-distance="5"
-    >
+    <ul v-infinite-scroll="loadMore" infinite-scroll-distance="5">
       <li v-for="data in datalist" :key="data.filmId" @click="handleChangepage(data.filmId)">
         <img :src="data.poster" />
         <h3>{{ data.name}}</h3>
         <p>观众评分{{data.grade}}</p>
         <p>主演:{{data.actors | actorfilter}}</p>
       </li>
-      <div v-show="isshow"> 加载中...</div>
+      <div v-show="isshow">加载中...</div>
     </ul>
   </div>
 </template>
@@ -73,7 +69,7 @@ export default {
         console.log(this.current)
         this.loading = false
         this.total = this.datalist.length
-      // console.log(res.data.data.films)
+        // console.log(res.data.data.films)
       })
     }
   }
@@ -85,6 +81,7 @@ export default {
 ul {
   margin-bottom: 50px;
   li {
+    z-index:-1;
     padding: 10px;
     overflow: hidden;
     img {
@@ -92,5 +89,26 @@ ul {
       height: 100px;
     }
   }
+}
+li {
+  margin-left: 10px;
+  flex: 1;
+  position: relative;
+}
+h3 {
+  font-size: 17px;
+  line-height: 24px;
+  width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+p {
+  font-size: 13px;
+  color: #666;
+  line-height: 22px;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 </style>

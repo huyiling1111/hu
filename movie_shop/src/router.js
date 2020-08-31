@@ -6,6 +6,8 @@ import Center from '@/views/Center'
 import Nowplaying from '@/views/film/Nowplaying'
 import Comingsoon from '@/views/film/Comingsoon'
 import Detail from '@/views/detail'
+import City from '@/views/city'
+
 Vue.use(Router)
 const router = new Router({
   routes: [
@@ -42,6 +44,10 @@ const router = new Router({
     {
       path: '/detail/:myid',
       component: Detail
+    },
+    {
+      path: '/city',
+      component: City
     }
   ]
 })
