@@ -48,7 +48,7 @@ export default {
   methods: {
     handleChangepage (id) {
       this.$router.push(`/detail/${id}`)
-      //   console.log(this)
+      console.log(id)
     },
     loadMore () {
       console.log('到底了')
@@ -93,7 +93,7 @@ ul {
 li {
   margin-left: 10px;
   flex: 1;
-  position: relative;
+  // position: relative;
 }
 h3 {
   font-size: 17px;
@@ -107,7 +107,7 @@ p {
   color: #666;
   line-height: 22px;
   width: 200px;
-  overflow: hidden;
+  // overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
