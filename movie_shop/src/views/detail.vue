@@ -1,20 +1,25 @@
 <template>
   <div v-if="datalist">
     <img :src="datalist.poster" class="poster" />
-    <h2>{{datalist.name}}</h2>
-    <h3>演职人员</h3>
+    <!-- <h2>{{datalist.name}}</h2> -->
+    <div class="actors-title-bar">
+    <span>演职人员</span>
+      </div>
     <swiper PerView="4" class="actorsclass" myclass="actorsclass">
       <div class="swiper-slide" v-for="item in datalist.actors" :key="item.name">
-        <img :src="item.avatarAddress" />
-        <p>{{item.name}}</p>
+        <img  :src="item.avatarAddress" />
+        <p>{{item.name.substring(0, 3)}}</p>
       </div>
     </swiper>
-    <h3>剧照</h3>
+    <div id="line"></div>
+    <div class="stage-photo">
+    <div class="stage-photo-title">剧照</div>
     <swiper PerView="3" class="photosclass" myclass="photosclass">
-      <div class="swiper-slide" v-for="item in datalist.photos" :key="item">
-        <img :src="item" />
+      <div class="swiper-slide swiper-slide-photo" v-for="item in datalist.photos" :key="item">
+        <img :src="item" style="width:100px;min-width=100px"/>
       </div>
     </swiper>
+    </div>
   </div>
 </template>
 <script>
@@ -58,18 +63,49 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.swiper-slide {
-  position: relative;
+.actors-title-bar{
   box-sizing: border-box;
-  width: 85px;
+ width: 100%;
+padding: 15px;
+}
+.swiper-slide {
+  // position: relative;
+  width: 100%;
+  height:150px;
+  margin-left: 10px;
   p {
     position: absolute;
     bottom: 0px;
     left: 20px;
-    text-align: center;
+    margin:0 auto;
+    font-size:13px
   }
 }
 .poster {
   width: 100%;
+}
+#line {
+  margin-top:20px;
+width:100%;
+height:10px;
+background:rgb(243, 239, 239)
+
+}
+.stage-photo{
+  box-sizing: border-box;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding:0px;
+ .stage-photo-title{
+        margin-left:20px;
+        margin-bottom:20px;
+      }
+.swiper-slide-photo{width:120px;height:110px;
+
+img{height:110px}
+}
+.photosclass{
+  margin-right:0px；
+}
 }
 </style>

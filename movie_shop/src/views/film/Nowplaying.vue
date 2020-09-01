@@ -6,6 +6,7 @@
         <h3>{{ data.name}}</h3>
         <p>观众评分{{data.grade}}</p>
         <p>主演:{{data.actors | actorfilter}}</p>
+        <div class="buy" >购票</div>
       </li>
       <div v-show="isshow">加载中...</div>
     </ul>
@@ -43,12 +44,13 @@ export default {
       this.datalist = res.data.data.films
 
       // console.log(res.data.data.films)
+      this.total = res.data.data.total
     })
   },
   methods: {
     handleChangepage (id) {
       this.$router.push(`/detail/${id}`)
-      console.log(id)
+      // console.log(id)
     },
     loadMore () {
       console.log('到底了')
@@ -65,10 +67,9 @@ export default {
           'X-Host': 'mall.film-ticket.film.list'
         }
       }).then(res => {
-        this.datalist = [...this.datalist]
+        this.datalist = [...this.datalist, ...res.data.data.films]
         console.log(this.current)
         this.loading = false
-        this.total = this.datalist.length
         // console.log(res.data.data.films)
       })
     }
@@ -81,10 +82,24 @@ export default {
 ul {
   margin-bottom: 50px;
   li {
-    z-index:-1;
+    z-index:0;
     padding: 10px;
     overflow: hidden;
+    position: relative;
+    .buy{
+      width:35px;
+      height:25px;
+     border:1px solid orange;
+     position:absolute;
+      right:20px;
+      top:20px;
+       text-align: center;
+      line-height:25px;
+       font-size:13px;
+      color:orange;
+    }
     img {
+      margin-right:5px;
       float: left;
       height: 100px;
     }
@@ -107,7 +122,7 @@ p {
   color: #666;
   line-height: 22px;
   width: 200px;
-  // overflow: hidden;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }

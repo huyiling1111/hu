@@ -7,6 +7,7 @@
 <style lang="scss" scoped>
 ul{
     display: flex;
+    z-index:1;
     li{
         height:40px;
         flex:1;

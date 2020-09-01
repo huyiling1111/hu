@@ -1,10 +1,10 @@
 <template>
     <div>
       <swiper ref="myfilmheader" >
-           <li class="swiper-slide" ><img src="@/assets/timg1.jpg" alt=""></li>
-           <li class="swiper-slide" ><img src="@/assets/timg2.jpg" alt=""></li>
-           <li class="swiper-slide" ><img src="@/assets/timg3.jpg" alt=""></li>
-           <li class="swiper-slide" ><img src="@/assets/timg4.jpg" alt=""></li>
+           <li class="swiper-slide" ><img src="https://ftp.bmp.ovh/imgs/2020/09/28731af0b8607de4.jpg" alt=""></li>
+           <li class="swiper-slide" ><img src="https://ftp.bmp.ovh/imgs/2020/09/8acd8b117af13684.jpg" alt=""></li>
+           <li class="swiper-slide" ><img src="https://ftp.bmp.ovh/imgs/2020/09/96f9bfed308aa6ec.jpg" alt=""></li>
+           <li class="swiper-slide" ><img src="https://ftp.bmp.ovh/imgs/2020/09/b96b3bf73e9c9c46.jpg" alt=""></li>
       </swiper>
       <filmheader :class="isfixed?'fixed':''" > </filmheader>
         <router-view></router-view>

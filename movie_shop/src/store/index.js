@@ -18,6 +18,7 @@ export default new Vuex.Store({
     },
     comingListMutation (state, data) {
       state.comingList = data
+      console.log(state.comingList, 520)
     }
   },
   actions: {
@@ -30,6 +31,7 @@ export default new Vuex.Store({
         }
       }).then(res => {
         console.log(res.data)
+        console.log(typeof (res.data.data.films))
         store.commit('comingListMutation', res.data.data.films)
       })
     }

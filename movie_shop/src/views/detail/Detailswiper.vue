@@ -25,7 +25,7 @@ export default {
     /* eslint-disable no-new */
     new Swiper(`.${this.myclass}`, {
       slidesPerView: this.PerView,
-      spaceBetween: 30,
+      spaceBetween: 0,
       freeMode: true
     })
   }
@@ -36,7 +36,8 @@ export default {
 <style lang="scss" scoped>
   .swiper-wrapper{
     .swiper-slide{
-      height:130px;
+      width:85px;
+      height:150px;
       img{
         position:absolute;
             width:85px;

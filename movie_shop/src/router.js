@@ -10,6 +10,7 @@ import City from '@/views/city'
 
 Vue.use(Router)
 const router = new Router({
+  mode: 'hash',
   routes: [
     {
       path: '/film',
