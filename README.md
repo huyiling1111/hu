@@ -17,6 +17,6 @@
  - 电影院地址页面
  - 我的页面
 # 项目页面截图
-![](https://github.com/huyiling1111/myproject/raw/master/movie_shop/src/assets/all.jpg)
+![](https://github.com/huyiling1111/miaomiaomovie/raw/master/src/assets/all.jpg)
 # 项目目录树桩结构分析图
-![](https://github.com/huyiling1111/myproject/raw/master/movie_shop/src/assets/jiegou.jpg)
+![](https://github.com/huyiling1111/miaomiaomovie/raw/master/src/assets/jiegou.jpg)
